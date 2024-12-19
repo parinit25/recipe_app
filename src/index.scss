@@ -1,0 +1,7 @@
+@use "../partial/colors" as colors;
+
+body {
+  margin: 0;
+  font-family: "Poppins", serif;
+  background-color: colors.$background-color;
+}

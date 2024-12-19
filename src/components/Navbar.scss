@@ -1,0 +1,15 @@
+@use "../../partial/colors" as colors;
+@use "../../partial/fontWeight" as fw;
+
+header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: colors.$header-background-color;
+  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1),
+    0px 1px 2px 0px rgba(0, 0, 0, 0.06);
+}
+
+header > h1 {
+  font-weight: fw.$heading-h1-fw;
+}

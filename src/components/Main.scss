@@ -1,0 +1,179 @@
+@use "../../partial/colors" as colors;
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.main-container {
+  width: 90%;
+  max-width: 1200px;
+  min-width: 300px;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.get-recipe-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 10px;
+  border-radius: 6px;
+  margin-top: 20px;
+  overflow: hidden;
+  align-items: center; // Add this line to align items at the start
+}
+
+.submit-button {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  height: 38px;
+}
+
+form {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  width: 100%;
+}
+
+form input {
+  font-family: "Poppins", sans-serif;
+  border-radius: 6px;
+  border: 1px solid colors.$input-color;
+  padding: 9px 13px;
+  box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.05);
+  flex: 1;
+  min-width: 200px;
+}
+
+form input::placeholder {
+  font-family: "Poppins", sans-serif;
+}
+
+.get-recipe-button {
+  padding: 0.5rem;
+  font-family: "Poppins", sans-serif;
+  justify-self: flex-end;
+  // align-self: flex-end;
+  border: none;
+  border-radius: 6px;
+  background-color: #c05e3c;
+  color: colors.$button-text-color;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 150px;
+  overflow: hidden;
+  transition: all 300ms;
+}
+
+.get-recipe-button:hover {
+  transform: scale(1.05);
+  overflow: hidden;
+}
+
+.add-ingredients-button {
+  font-family: "Poppins", sans-serif;
+  border: none;
+  border-radius: 6px;
+  background-color: colors.$button-color;
+  color: colors.$button-text-color;
+  font-size: 0.875rem;
+  font-weight: 500;
+  width: 150px;
+  padding: 0.5rem;
+  transition: all 300ms;
+}
+
+.add-ingredients-button:hover {
+  transform: scale(1.05);
+}
+
+.add-ingredients-button::before {
+  content: "+";
+  margin-right: 5px;
+}
+.spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.loader {
+  border: 4px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #4caf50;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* Responsive Design */
+
+@media (max-width: 768px) {
+  .main-container {
+    width: 100%;
+    padding: 0 15px;
+  }
+
+  form {
+    flex-direction: column;
+  }
+
+  form input {
+    width: 94%;
+  }
+
+  .submit-button {
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+  }
+
+  .get-recipe-button,
+  .add-ingredients-button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  main {
+    padding: 10px;
+  }
+  // .get-recipe-container {
+  //   display: flex;
+  //   flex-direction: column;
+  // }
+
+  .ingredients-list {
+    gap: 8px;
+  }
+
+  form input {
+    width: 100%;
+    font-size: 0.875rem;
+  }
+
+  .get-recipe-button,
+  .add-ingredients-button {
+    font-size: 0.75rem;
+    padding: 0.5rem;
+  }
+}
